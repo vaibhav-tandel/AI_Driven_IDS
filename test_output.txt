@@ -1,0 +1,85 @@
+﻿python : WARNING: No 
+libpcap provider 
+available ! pcap won't 
+be used
+At line:1 char:32
++ ... :PYTHONIOENCODING='
+utf-8'; python -X utf8 
+test_system.py 2>&1 | 
+Out-F ...
++                        
+        ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo       
+       : NotSpecified:   
+  (WARNING: No lib...p   
+  won't be used:Strin    
+g) [], RemoteExcepti    
+on
+    + FullyQualifiedErro 
+   rId : NativeCommandE  
+  rror
+ 
+
+≡ƒº¬ TEST SUITE: Real-Time AI IDS
+==================================================
+
+≡ƒôï Config
+  Γ£à Config loads correctly
+
+≡ƒÆ╛ Database
+  Γ£à Database creates tables
+  Γ£à Insert and query alerts
+  Γ£à Alert count aggregation
+
+≡ƒôí Packet Capture
+  Γ£à PacketInfo creation
+≡ƒƒó Simulation mode ΓÇö generating synthetic traffic
+  Γ£à Simulation captures packets
+
+≡ƒöÇ Flow Aggregator
+  Γ£à Flow creation
+  Γ£à Flow produces 81 features
+  Γ£à FlowAggregator groups and emits flows
+
+≡ƒº¼ Feature Extractor
+  Γ£à Feature columns match model (81 features)
+
+≡ƒöö Alert System
+  Γ£à Severity classification
+≡ƒô¥ Alert logging to: D:\CODESSS\6IT\SGP-III\phase 3\logs\ids_alerts.log
+16:48:16 | ≡ƒö┤ 
+[CRITICAL] DDoS | 
+1.2.3.4 ΓåÆ 5.6.7.8:80 | 
+Confidence: 95.0%
+  Γ£à Alert logging to file
+
+≡ƒîì GeoIP Lookup
+  Γ£à Private IP detection
+  Γ£à Simulated GeoIP lookup
+  Γ£à GeoIP caching
+
+≡ƒöî Network Monitor (psutil)
+  Γ£à NetworkMonitor creation
+    (82 active connections found)
+  Γ£à psutil reads system connections
+    (9 interfaces found)
+  Γ£à Interface detection
+
+≡ƒöä Auto Mode Selection
+    (auto-detected: scapy)
+  Γ£à Auto mode detection
+  Γ£à PacketCapture multi-mode
+
+≡ƒôí psutil Packet Generation
+≡ƒƒó psutil network monitor ΓÇö capturing real connections (no admin required)
+   Poll interval: 0.3s
+   Active interfaces: Ethernet (172.16.96.171), Ethernet 4 (192.168.109.1), Ethernet 5 (192.168.153.1), Loopback Pseudo-Interface 1 (127.0.0.1)
+    (520 packets captured from real connections)
+  Γ£à psutil captures real packets
+
+==================================================
+≡ƒôè Results: 21 passed, 0 failed
+≡ƒÄë All tests passed!
+==================================================
+

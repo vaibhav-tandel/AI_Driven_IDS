@@ -1,0 +1,144 @@
+﻿
+≡ƒº¬ TEST SUITE: Real-Time AI IDS
+==================================================
+
+≡ƒôï Config
+  Γ£à Config loads correctly
+
+≡ƒÆ╛ Database
+  Γ£à Database creates tables
+  Γ£à Insert and query alerts
+  Γ£à Alert count aggregation
+
+≡ƒôí Packet Capture
+  Γ£à PacketInfo creation
+≡ƒƒó Simulation mode ΓÇö generating synthetic traffic
+python : Exception 
+in thread Thread-1 
+(_capture_loop):
+At line:1 char:32
++ $env:PYTHONIOENCODI
+NG='utf-8'; python 
+-u test_system.py 
+2>&1 | Out-Fi ...
++                    
+            ~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : 
+NotSpecified: (E    
+xception in 
+th..._cap    
+ture_loop)::String) 
+[    ], 
+RemoteException
+    + 
+FullyQualifiedError  
+  Id : 
+NativeCommandErr    
+or
+ 
+Traceback (most 
+recent call last):
+  File "C:\Python313\
+Lib\threading.py", 
+line 1043, in 
+_bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Python313\
+Lib\threading.py", 
+line 994, in run
+    self._target(*sel
+f._args, 
+**self._kwargs)
+    ~~~~~~~~~~~~^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^
+  File "D:\CODESSS\6I
+T\SGP-III\phase 3\rea
+ltime\packet_capture.
+py", line 67, in 
+_capture_loop
+    self._simulate(ca
+llback)
+    ~~~~~~~~~~~~~~^^^
+^^^^^^^
+  File "D:\CODESSS\6I
+T\SGP-III\phase 3\rea
+ltime\packet_capture.
+py", line 186, in 
+_simulate
+    callback(pkt)
+    ~~~~~~~~^^^^^
+  File "D:\CODESSS\6I
+T\SGP-III\phase 
+3\test_system.py", 
+line 131, in on_pkt
+    capture.stop()
+    ~~~~~~~~~~~~^^
+  File "D:\CODESSS\6I
+T\SGP-III\phase 3\rea
+ltime\packet_capture.
+py", line 63, in stop
+    self._thread.join
+(timeout=5)
+    ~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^
+  File "C:\Python313\
+Lib\threading.py", 
+line 1087, in join
+    raise 
+RuntimeError("cannot 
+join current thread")
+RuntimeError: cannot 
+join current thread
+  Γ£à Simulation captures packets
+
+≡ƒöÇ Flow Aggregator
+  Γ£à Flow creation
+  Γ£à Flow produces 81 features
+  Γ£à FlowAggregator groups and emits flows
+
+≡ƒº¼ Feature Extractor
+  Γ£à Feature columns match model (81 features)
+
+≡ƒöö Alert System
+  Γ£à Severity classification
+≡ƒô¥ Alert logging to: D:\CODESSS\6IT\SGP-III\phase 3\logs\ids_alerts.log
+13:56:09 | ≡ƒö┤ 
+[CRITICAL] DDoS | 
+1.2.3.4 ΓåÆ 
+5.6.7.8:80 | 
+Confidence: 95.0%
+  Γ£à Alert logging to file
+
+≡ƒîì GeoIP Lookup
+  Γ£à Private IP detection
+  Γ¥î Simulated GeoIP lookup: 
+Traceback (most 
+recent call last):
+  File "D:\CODESSS\6I
+T\SGP-III\phase 
+3\test_system.py", 
+line 20, in test
+    fn()
+    ~~^^
+  File "D:\CODESSS\6I
+T\SGP-III\phase 
+3\test_system.py", 
+line 261, in 
+test_simulated_geoip
+    assert 
+result["country"] == 
+"China"
+           ^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+AssertionError
+  Γ£à GeoIP caching
+
+==================================================
+≡ƒôè Results: 14 passed, 1 failed
+ΓÜá∩╕Å  1 test(s) failed ΓÇö review errors above
+==================================================
+

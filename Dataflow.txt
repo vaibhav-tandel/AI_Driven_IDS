@@ -1,0 +1,54 @@
+phase 3/
+│
+├── config.py                  # Central configuration (all paths, settings)
+│
+├── data/
+│   ├── raw/                   # Original CIC-IDS2017 CSV files
+│   │   ├── Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+│   │   ├── Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+│   │   ├── Friday-WorkingHours-Morning.pcap_ISCX.csv
+│   │   ├── Monday-WorkingHours.pcap_ISCX.csv
+│   │   ├── Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+│   │   ├── Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+│   │   ├── Tuesday-WorkingHours.pcap_ISCX.csv
+│   │   └── Wednesday-workingHours.pcap_ISCX.csv
+│   └── processed/             # All generated/processed output files
+│       ├── sample_dataset.csv             # Cleaned merged dataset
+│       ├── prepared_data.pkl              # Scaled, balanced train/test splits
+│       ├── unified_ids_model.pkl          # Trained RandomForest model + scaler + encoder
+│       ├── randomforest_confusion_matrix.png
+│       └── xgboost_confusion_matrix.png
+│
+├── data_processing.py         # Step 1: Merge, clean, feature-engineer raw CSVs
+├── prepare_data.py            # Step 2: Train/test split, SMOTE, scaling
+├── train_model.py             # Step 3: Train RandomForest + XGBoost, evaluate
+├── feature_selection.py       # Optional: Select top features by importance
+│
+├── realtime/                  # Core real-time IDS engine package
+│   ├── __init__.py
+│   ├── packet_capture.py      # Live Scapy capture + simulation mode
+│   ├── flow_aggregator.py     # Groups packets into flows (81 features)
+│   ├── feature_extractor.py   # Converts flows to model-ready vectors
+│   ├── realtime_engine.py     # Main orchestrator (capture → predict → alert)
+│   ├── alert_system.py        # Severity classification, file/email alerts
+│   ├── db.py                  # SQLite persistence for dashboard
+│   └── geoip_lookup.py        # IP geolocation with caching
+│
+├── run_ids.py                 # CLI entry point (simulation or live)
+├── realtime_ids.py            # Interactive CLI for ad-hoc analysis
+├── realtime_dashboard.py      # Matplotlib animated bar chart dashboard
+│
+├── dashboard/
+│   └── app.py                 # Streamlit web dashboard (main UI)
+├── dashboard_app.py           # Simple Streamlit alert log viewer
+│
+├── seed_demo_data.py          # Seed demo data for dashboard testing
+├── test_system.py             # Component test suite (15 tests)
+│
+├── ids_data.db                # SQLite database (IDS alerts)
+├── logs/
+│   └── ids_alerts.log         # Alert text log
+│
+├── requirements.txt           # Python dependencies
+├── Dataflow.txt               # This file — project structure
+└── info.txt                   # Detailed project documentation
