@@ -1,4 +1,4 @@
-# AI-Powered Real-Time Intrusion Detection System (Phase 5)
+# AI-Powered Real-Time Intrusion Detection System 
 
 An end-to-end, real-time IDS that converts live network activity into alerts within seconds. It trains on CIC-IDS2017, extracts 81 flow features, and uses a hybrid ML + rules + temporal engine. Alerts are persisted to SQLite and visualized in a Streamlit dashboard.
 
